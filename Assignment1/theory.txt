@@ -1,0 +1,223 @@
+1. Introduction to HTML
+
+HTML (HyperText Markup Language) is the standard markup language used to create and structure web pages.
+It uses tags to define elements such as text, images, tables, links, and formatting styles.
+
+HTML documents are static in nature and are interpreted by web browsers to display content on the screen.
+
+2. Basic Structure of an HTML Document
+
+Every HTML document follows a predefined structure:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+</head>
+<body>
+    Page Content
+</body>
+</html>
+
+Explanation of Structure:
+🔹 <!DOCTYPE html>
+
+Declares the document type
+
+Informs the browser that the document uses HTML5
+
+🔹 <html>
+
+Root element of the HTML document
+
+Contains the entire web page content
+
+Has a language attribute like lang="en"
+
+🔹 <head>
+
+Contains meta-information about the document
+
+Not displayed directly on the web page
+
+Includes:
+
+<title>
+
+<meta>
+
+<style>
+
+🔹 <title>
+
+Defines the title of the web page
+
+Displayed on the browser tab
+
+Example:
+
+<title>HTML Text Formatting Tags</title>
+
+🔹 <body>
+
+Contains all the visible content
+
+Includes text, tables, headings, and formatting tags
+
+3. <style> Tag (Internal CSS)
+
+The <style> tag is used to define CSS rules within the HTML document.
+
+Purpose:
+
+Improves visual appearance
+
+Controls layout, colors, fonts, and spacing
+
+Example:
+<style>
+  body {
+    font-family: Arial;
+    background-color: #f4f6f8;
+  }
+</style>
+
+Benefits:
+
+Keeps design consistent
+
+Makes the page more readable
+
+No external CSS file required
+
+4. Table Structure in HTML
+
+Tables are used to display data in rows and columns.
+
+Main Table Tags:
+Tag	Description
+<table>	Defines the table
+<tr>	Table row
+<th>	Table heading
+<td>	Table data
+Example:
+<table>
+  <tr>
+    <th>Tag</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>&lt;b&gt;</td>
+    <td>Bold text</td>
+  </tr>
+</table>
+
+5. Text Formatting Tags Explained
+
+HTML provides multiple formatting tags to enhance text presentation:
+
+🔹 <b>
+
+Makes text bold
+
+No semantic importance
+
+🔹 <strong>
+
+Displays bold text
+
+Indicates important content
+
+🔹 <i>
+
+Displays text in italic
+
+🔹 <em>
+
+Emphasized text
+
+Semantic importance
+
+🔹 <u>
+
+Underlines text
+
+🔹 <mark>
+
+Highlights text
+
+🔹 <small>
+
+Displays smaller-sized text
+
+🔹 <del>
+
+Shows deleted text (strikethrough)
+
+🔹 <ins>
+
+Shows inserted text (underlined)
+
+🔹 <sub>
+
+Subscript text
+
+Example: H₂O
+
+🔹 <sup>
+
+Superscript text
+
+Example: x²
+
+6. Code & Preformatted Text Tags
+🔹 <code>
+
+Displays programming code in monospaced font
+
+🔹 <pre>
+
+Preserves whitespace and line breaks
+
+Useful for displaying formatted text or code
+
+7. Quotation & Reference Tags
+🔹 <q>
+
+Short inline quotation
+
+🔹 <blockquote>
+
+Long block quotation
+
+🔹 <abbr>
+
+Defines abbreviations with tooltip text
+
+🔹 <cite>
+
+Used to cite books, articles, or references
+
+8. Address & Direction Tags
+🔹 <address>
+
+Displays contact information
+
+🔹 <bdi>
+
+Isolates text for bi-directional languages
+
+🔹 <bdo>
+
+Overrides text direction (LTR / RTL)
+
+9. Conclusion
+
+This assignment demonstrates the use of HTML text formatting tags in a structured tabular format.
+It also explains the basic HTML document structure, internal styling using <style>, and proper use of tables for organizing content.
+
+Understanding these fundamentals is essential for building well-structured and readable web pages.
+
+✅ Result
+
+A static HTML web page was successfully created to display all major HTML text formatting tags with proper structure and styling.
