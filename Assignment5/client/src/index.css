@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.09);
+  --glass-border: rgba(255, 255, 255, 0.22);
+  --headline: "Space Grotesk", "Segoe UI", sans-serif;
+  --body: "Manrope", "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--body);
+  background:
+    radial-gradient(circle at 8% 8%, #244f73 0%, rgba(36, 79, 115, 0) 35%),
+    radial-gradient(circle at 90% 20%, #4e2861 0%, rgba(78, 40, 97, 0) 25%),
+    radial-gradient(circle at 20% 90%, #145f6d 0%, rgba(20, 95, 109, 0) 35%),
+    linear-gradient(145deg, #081420 0%, #11253e 45%, #0a1d33 100%);
+  color: #f2f7ff;
+  letter-spacing: 0.01em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--headline);
+}
+
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 18px 40px rgba(4, 12, 24, 0.32);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold tracking-tight;
+}
+
+.section-subtitle {
+  @apply text-sm md:text-base text-slate-200/90;
+}
+
+.btn-primary {
+  @apply rounded-lg bg-cyan-400 px-4 py-2 font-semibold text-slate-950 transition hover:bg-cyan-300;
+}
+
+.btn-accent {
+  @apply rounded-lg bg-amber-500 px-4 py-2 font-semibold text-slate-950 transition hover:bg-amber-400;
+}
+
+.input-glass {
+  @apply w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-sm outline-none transition focus:border-cyan-300 focus:bg-white/15;
+}
+
+.ambient-grid {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.14;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.orbit {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(32px);
+  opacity: 0.45;
+  pointer-events: none;
+  animation: drift 9s ease-in-out infinite alternate;
+}
+
+.orbit-1 {
+  width: 270px;
+  height: 270px;
+  background: rgba(34, 211, 238, 0.4);
+  top: -40px;
+  right: 8%;
+}
+
+.orbit-2 {
+  width: 210px;
+  height: 210px;
+  background: rgba(251, 146, 60, 0.35);
+  bottom: 8%;
+  left: 4%;
+  animation-delay: 0.6s;
+}
+
+@keyframes drift {
+  from {
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    transform: translateY(16px) translateX(-12px);
+  }
+}

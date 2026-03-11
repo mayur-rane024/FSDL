@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload & Display Image</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;         
+    }
+    img {
+      max-width: 300px;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Upload Image from PC</h2>
+
+  <input type="file" id="fileInput" accept="image/*">
+  <br><br>
+  <button onclick="uploadImage()">Upload</button>
+
+  <p id="status"></p>
+
+  <!-- Image will appear here -->
+  <img id="resultImg" />
+
+  <script>
+    function uploadImage() {
+      const fileInput = document.getElementById("fileInput");
+      const status = document.getElementById("status");
+      const img = document.getElementById("resultImg");
+
+      if (!fileInput.files.length) {
+        alert("Please select an image");
+        return;
+      }
+
+      const file = fileInput.files[0];
+      const formData = new FormData();
+
+      formData.append("file", file);
+      formData.append("upload_preset", "portfolio_unsigned");
+
+      status.innerText = "Uploading...";
+
+     fetch("https://api.cloudinary.com/v1_1/dsif5oyf3/image/upload", {
+  method: "POST",
+  body: formData
+})
+.then(res => res.json())
+.then(data => {
+  const secureImageURL = data.secure_url;
+  console.log("SECURE URL:", secureImageURL);
+
+  document.getElementById("resultImg").src = secureImageURL;
+});
+
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Assignment 4 - System Monitoring Dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <div class="dashboard">
+
+    <header class="topbar">
+      <div>
+        <p class="label">Real-life Application</p>
+        <h1>System Health Dashboard</h1>
+      </div>
+      <button id="toggleStreamBtn" class="btn">Pause Live Feed</button>
+    </header>
+
+    <section class="kpi-grid">
+      <article class="kpi">
+        <h2>CPU Usage</h2>
+        <p id="cpuValue" class="kpi-value">0%</p>
+        <span id="cpuStatus" class="badge good">Normal</span>
+      </article>
+
+      <article class="kpi">
+        <h2>Memory Usage</h2>
+        <p id="memoryValue" class="kpi-value">0%</p>
+        <span id="memoryStatus" class="badge good">Normal</span>
+      </article>
+
+      <article class="kpi">
+        <h2>Disk Usage</h2>
+        <p id="diskValue" class="kpi-value">0%</p>
+        <span id="diskStatus" class="badge good">Normal</span>
+      </article>
+
+      <article class="kpi">
+        <h2>System Health</h2>
+        <p id="healthScore" class="kpi-value">100</p>
+        <span id="healthStatus" class="badge good">Healthy</span>
+      </article>
+    </section>
+
+    <section class="panel-grid">
+      <article class="panel">
+        <h3>CPU vs Memory (Last 20 samples)</h3>
+        <div class="chart-container">
+          <canvas id="lineChart"></canvas>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h3>Current Resource Share</h3>
+        <div class="chart-container">
+          <canvas id="doughnutChart"></canvas>
+        </div>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h3>Service Load Distribution</h3>
+      <div class="chart-container">
+        <canvas id="barChart"></canvas>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="table-head">
+        <h3>Recent Events</h3>
+        <button id="clearLogBtn" class="btn secondary">Clear Log</button>
+      </div>
+
+      <div class="log-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Metric</th>
+              <th>Value</th>
+              <th>Severity</th>
+            </tr>
+          </thead>
+          <tbody id="logBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
