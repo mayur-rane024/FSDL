@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Listing - AutoMart</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <a href="/" class="logo">AutoMart</a>
+      <nav>
+        <a href="/">Browse</a>
+        <a href="/add-listing.html" class="btn-primary">+ Sell Your Vehicle</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="form-page">
+      <h2>Edit Listing</h2>
+      <p class="form-subtitle">Update the details of your vehicle listing.</p>
+
+      <div id="formMessage" class="form-message hidden"></div>
+
+      <form id="editListingForm" class="listing-form">
+        <div class="form-grid">
+          <div class="form-group full-width">
+            <label for="title">Title *</label>
+            <input type="text" id="title" name="title" required />
+          </div>
+
+          <div class="form-group">
+            <label for="category">Category *</label>
+            <select id="category" name="category" required>
+              <option value="car">Car</option>
+              <option value="bike">Bike</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="brand">Brand</label>
+            <input type="text" id="brand" name="brand" />
+          </div>
+
+          <div class="form-group">
+            <label for="year">Year</label>
+            <input type="number" id="year" name="year" min="1900" max="2026" />
+          </div>
+
+          <div class="form-group">
+            <label for="price">Price (₹) *</label>
+            <input type="number" id="price" name="price" min="0" required />
+          </div>
+
+          <div class="form-group">
+            <label for="kmDriven">KM Driven</label>
+            <input type="number" id="kmDriven" name="kmDriven" min="0" />
+          </div>
+
+          <div class="form-group">
+            <label for="condition">Condition *</label>
+            <select id="condition" name="condition" required>
+              <option value="excellent">Excellent</option>
+              <option value="good">Good</option>
+              <option value="fair">Fair</option>
+              <option value="poor">Poor</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="fuelType">Fuel Type</label>
+            <select id="fuelType" name="fuelType">
+              <option value="">Select Fuel Type</option>
+              <option value="petrol">Petrol</option>
+              <option value="diesel">Diesel</option>
+              <option value="electric">Electric</option>
+              <option value="hybrid">Hybrid</option>
+              <option value="cng">CNG</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" />
+          </div>
+
+          <div class="form-group">
+            <label for="imageUrl">Image URL</label>
+            <input type="text" id="imageUrl" name="imageUrl" />
+          </div>
+
+          <div class="form-group">
+            <label for="sellerName">Your Name *</label>
+            <input type="text" id="sellerName" name="sellerName" required />
+          </div>
+
+          <div class="form-group">
+            <label for="sellerContact">Contact (Phone/Email) *</label>
+            <input type="text" id="sellerContact" name="sellerContact" required />
+          </div>
+
+          <div class="form-group">
+            <label for="isSold">Status</label>
+            <select id="isSold" name="isSold">
+              <option value="false">Available</option>
+              <option value="true">Sold</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="description">Description *</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary btn-lg">Update Listing</button>
+          <a id="cancelBtn" href="/" class="btn-secondary btn-lg">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 AutoMart. Buy &amp; Sell Used Vehicles.</p>
+    </div>
+  </footer>
+
+  <script src="/js/edit-listing.js"></script>
+</body>
+</html>

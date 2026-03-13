@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AutoMart - Used Cars & Bikes</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <a href="/" class="logo">AutoMart</a>
+      <nav>
+        <a href="/" class="active">Browse</a>
+        <a href="/add-listing.html" class="btn-primary">+ Sell Your Vehicle</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Find Your Next Ride</h1>
+      <p>Browse hundreds of used cars and bikes from trusted sellers.</p>
+    </section>
+
+    <!-- Filters -->
+    <div class="filters-bar">
+      <input type="text" id="searchInput" placeholder="Search by title, brand, location..." />
+      <select id="categoryFilter">
+        <option value="">All Categories</option>
+        <option value="car">Cars</option>
+        <option value="bike">Bikes</option>
+        <option value="other">Other</option>
+      </select>
+      <select id="conditionFilter">
+        <option value="">Any Condition</option>
+        <option value="excellent">Excellent</option>
+        <option value="good">Good</option>
+        <option value="fair">Fair</option>
+        <option value="poor">Poor</option>
+      </select>
+      <input type="number" id="minPrice" placeholder="Min Price (₹)" />
+      <input type="number" id="maxPrice" placeholder="Max Price (₹)" />
+      <button id="searchBtn" class="btn-primary">Search</button>
+      <button id="resetBtn" class="btn-secondary">Reset</button>
+    </div>
+
+    <div id="resultsInfo" class="results-info"></div>
+
+    <!-- Listings Grid -->
+    <div id="listingsGrid" class="listings-grid">
+      <div class="loading">Loading listings...</div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 AutoMart. Buy &amp; Sell Used Vehicles.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
