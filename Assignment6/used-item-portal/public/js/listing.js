@@ -26,7 +26,7 @@ async function loadListing() {
     if (!data.success) throw new Error(data.message);
 
     const item = data.data;
-    document.title = `${item.title} - AutoMart`;
+    document.title = `${item.title} | V - Mart`;
 
     const imgHtml = item.imageUrl
       ? `<img class="detail-img" src="${item.imageUrl}" alt="${item.title}" onerror="this.outerHTML='<div class=detail-img-placeholder>${getCategoryIcon(item.category)}</div>'" />`
@@ -64,7 +64,7 @@ async function loadListing() {
             <p>${item.description}</p>
           </div>
           <div class="seller-card">
-            <h3>Seller Info</h3>
+            <h3>Seller Details</h3>
             <p>${item.sellerName}</p>
             <p class="contact">${item.sellerContact}</p>
             <p style="font-size:.8rem;color:var(--text-muted);margin-top:.4rem">Posted on ${postedDate}</p>

@@ -38,23 +38,27 @@ function renderCard(item) {
           ${soldBadge}
         </div>
         <div class="card-location">${year}${km}${item.location ? ' · ' + item.location : ''}</div>
+        <div class="card-footer">
+          <span class="card-delivery">Ready for pickup</span>
+          <span class="card-cta">View details</span>
+        </div>
       </div>
     </div>
   `;
 }
 
 async function fetchListings(params = {}) {
-  grid.innerHTML = '<div class="loading">Loading listings...</div>';
+  grid.innerHTML = '<div class="loading">Loading marketplace listings...</div>';
   const query = new URLSearchParams(params).toString();
   try {
     const res = await fetch(`${API}?${query}`);
     const data = await res.json();
     if (!data.success) throw new Error(data.message);
 
-    resultsInfo.textContent = `${data.count} listing${data.count !== 1 ? 's' : ''} found`;
+    resultsInfo.textContent = `${data.count} product${data.count !== 1 ? 's' : ''} found`;
 
     if (data.count === 0) {
-      grid.innerHTML = `<div class="empty-state"><h3>No listings found</h3><p>Try adjusting your search filters.</p></div>`;
+      grid.innerHTML = `<div class="empty-state"><h3>No products matched</h3><p>Try adjusting filters or search with broader keywords.</p></div>`;
       return;
     }
     grid.innerHTML = data.data.map(renderCard).join('');
