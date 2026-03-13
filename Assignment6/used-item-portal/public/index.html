@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>V - Mart | Smart Pre-Owned Marketplace</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <a href="/" class="logo">V <span>- Mart</span></a>
+      <nav>
+        <a href="/" class="active">Browse</a>
+        <a href="/add-listing.html" class="btn-primary">+ Sell an Item</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Discover Verified Pre-Owned Deals Near You</h1>
+      <p>Shop smarter on V - Mart with curated listings, transparent pricing, and direct contact with local sellers.</p>
+      <div class="hero-pills">
+        <span class="hero-pill">Fast Local Discovery</span>
+        <span class="hero-pill">Direct Buyer-Seller Contact</span>
+        <span class="hero-pill">Fair Market Pricing</span>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <div class="filters-bar">
+      <input type="text" id="searchInput" placeholder="Search by title, brand, location..." />
+      <select id="categoryFilter">
+        <option value="">All Categories</option>
+        <option value="car">Cars</option>
+        <option value="bike">Bikes</option>
+        <option value="other">Other</option>
+      </select>
+      <select id="conditionFilter">
+        <option value="">Any Condition</option>
+        <option value="excellent">Excellent</option>
+        <option value="good">Good</option>
+        <option value="fair">Fair</option>
+        <option value="poor">Poor</option>
+      </select>
+      <input type="number" id="minPrice" placeholder="Min Price (₹)" />
+      <input type="number" id="maxPrice" placeholder="Max Price (₹)" />
+      <button id="searchBtn" class="btn-primary">Search</button>
+      <button id="resetBtn" class="btn-secondary">Reset</button>
+    </div>
+
+    <div class="section-head">
+      <h2 class="section-title">Featured Listings</h2>
+      <div id="resultsInfo" class="results-info"></div>
+    </div>
+
+    <!-- Listings Grid -->
+    <div id="listingsGrid" class="listings-grid">
+      <div class="loading">Loading listings...</div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 V - Mart. Buy and sell pre-owned items with confidence.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
